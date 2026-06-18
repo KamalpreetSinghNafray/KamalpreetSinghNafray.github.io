@@ -1,5 +1,0 @@
-# GitHub Pages Configuration
-# Note: .nojekyll is also present to explicitly bypass Jekyll processing.
-remote_theme: minimal
-exclude: [node_modules, vendor]
-include: [.nojekyll]
