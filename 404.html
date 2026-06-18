@@ -2,17 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Kamalpreet Singh Nafray</title>
+    <title>kamalpreetsinghnafray portfolio</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0;
-
+      // SPA redirect script for GitHub Pages (compatible with existing index.html parser)
       var l = window.location;
+      var pathSegmentsToKeep = 1; // '/portfolio' is 1 segment
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
         (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
