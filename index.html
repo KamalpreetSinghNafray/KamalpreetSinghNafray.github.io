@@ -7,6 +7,7 @@
     <title>Kamalpreet Singh Nafray - Hub</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='55%' text-anchor='middle' dominant-baseline='central' fill='%23FFFFFF' font-family='Sora, sans-serif' font-weight='800' font-style='italic' font-size='64'>K</text></svg>" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="/portfolio/" />
     <style>
         :root {
             --bg-primary: #0C0A09;
@@ -393,6 +394,24 @@
                 glow.style.width = '400px';
                 glow.style.height = '400px';
             });
+        });
+    </script>
+    <script>
+        // Prefetch and cache the main portfolio app resources (JS, CSS, images) in the background
+        window.addEventListener('load', () => {
+            // Wait 1.5 seconds after load to ensure no impact on initial load performance
+            setTimeout(() => {
+                const iframe = document.createElement('iframe');
+                iframe.src = '/portfolio/';
+                iframe.style.display = 'none';
+                iframe.style.width = '0';
+                iframe.style.height = '0';
+                iframe.style.border = 'none';
+                iframe.setAttribute('aria-hidden', 'true');
+                iframe.setAttribute('tabindex', '-1');
+                document.body.appendChild(iframe);
+                console.log('Portfolio application preloaded in background.');
+            }, 1500);
         });
     </script>
 </body>
